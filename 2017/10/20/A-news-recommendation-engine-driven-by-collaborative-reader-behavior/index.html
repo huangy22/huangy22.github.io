@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://yoursite.com/images/news/wordcloud.png">
 <meta property="og:image" content="http://yoursite.com/images/news/match.png">
 <meta property="og:image" content="http://yoursite.com/images/news/roc.png">
-<meta property="og:updated_time" content="2017-12-25T04:42:36.484Z">
+<meta property="og:updated_time" content="2017-12-25T20:00:30.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A news recommendation engine driven by collaborative reader behavior">
 <meta name="twitter:description" content="Reading the news online has exploded as the web provides access to millions of news sources from around the world. The sheer volume of articles can be overwhelming to readers. Therefore, building a ne">
@@ -386,7 +386,7 @@
 </ul>
 <h3 id="Step-1-Finding-readers-with-similar-interests"><a href="#Step-1-Finding-readers-with-similar-interests" class="headerlink" title="Step 1: Finding readers with similar interests"></a>Step 1: Finding readers with similar interests</h3><p>As a first step, the engine identifies readers with similar news interests based on their behavior of retweeting articles posted on Twitter. The data was collected from articles posted on Twitter by three different publishers (New York Times, Washington Post, and Bloomberg) between May 23rd and June 2nd, 2017. I also collected information from the Twitter profiles of the users retweeting the articles. By looking at how many news posts two users share in common, I can define a <a href="https://en.wikipedia.org/wiki/Cosine_similarity" target="_blank" rel="noopener">cosine similarity</a> score for the users. This similarity score enables the construction of a network by weighting the links between users.</p>
 <p>By applying a <a href="https://en.wikipedia.org/wiki/Hierarchical_clustering_of_networks" target="_blank" rel="noopener">hierarchical clustering algorithm</a> to the user network, I can detect the community structures among the readers. The hierarchical clustering algorithm uses a <a href="https://en.wikipedia.org/wiki/Greedy_algorithm" target="_blank" rel="noopener">greedy method</a> to try and optimize the <a href="https://en.wikipedia.org/wiki/Modularity_(networks" target="_blank" rel="noopener">modularity</a>) of clusters (defined below). The modularity is an important metric for network clustering, which indicates how dense the connections within clusters are compared to the connections between different clusters.</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*YZ1p3NgerqqXRqUFiyV4KQ.png" alt="Modularity score of a clustering in networks. In the equation, m is the total number of links in a network, v and w are indices of the nodes in the network (users), A is the link matrix between each pair of nodes (defined as the similarity score), kv is the total link weight that is connected to a specific node v, and cv is the group label of node v."><span class="image-caption">Modularity score of a clustering in networks. In the equation, m is the total number of links in a network, v and w are indices of the nodes in the network (users), A is the link matrix between each pair of nodes (defined as the similarity score), kv is the total link weight that is connected to a specific node v, and cv is the group label of node v.</span></p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*YZ1p3NgerqqXRqUFiyV4KQ.png" alt="Modularity score of a clustering in networks. In the equation, $m$ is the total number of links in a network, $v$ and $w$ are indices of the nodes in the network (users), $A$ is the link matrix between each pair of nodes (defined as the similarity score), $k_v$ is the total link weight that is connected to a specific node $v$, and $c_v$ is the group label of node $v$."><span class="image-caption">Modularity score of a clustering in networks. In the equation, $m$ is the total number of links in a network, $v$ and $w$ are indices of the nodes in the network (users), $A$ is the link matrix between each pair of nodes (defined as the similarity score), $k_v$ is the total link weight that is connected to a specific node $v$, and $c_v$ is the group label of node $v$.</span></p>
 <p>Any real-world network will have a modularity value between 0 and 1. In my user network, the modularity score of the hierarchical clustering algorithm peaks at 6 clusters with value 0.151.</p>
 <p><img src="/images/news/clusters.png" alt="Community structure in the user network detected from the clustering algorithm. Each point represents a user, with colors representing their group label. Due to visualization limitation, in the graph I only show the users with more than 30 retweets. The length of links between users are inversely related to the similarity between them. More similar users will be pulled closely together while dissimilar users will be pushed further apart."><span class="image-caption">Community structure in the user network detected from the clustering algorithm. Each point represents a user, with colors representing their group label. Due to visualization limitation, in the graph I only show the users with more than 30 retweets. The length of links between users are inversely related to the similarity between them. More similar users will be pulled closely together while dissimilar users will be pushed further apart.</span></p>
 <p>With the help of the <a href="https://d3js.org/" target="_blank" rel="noopener">D3</a> visualization package, I plotted the community structure in the subset of readers with highest number of retweets. In the graph, users with high similarities are pulled closer to each other and less similar users will be pushed further apart. Some groups (for    example the red, purple, green and light blue groups) show a very tight structure with extremely high similarities within the group, while the other groups are in a more diffuse shape, indicating more diverse interests among the group members.</p>
@@ -802,24 +802,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
