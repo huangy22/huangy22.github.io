@@ -1,0 +1,800 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="getting started," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Yuan's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Data science is no doubt a hot field and attracts professionals from all different domains who are able to organize the astonishing amount of data as well as get insight from data. Though transitionin">
+<meta name="keywords" content="getting started">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Journey From Physics To Data Science (Part I)">
+<meta property="og:url" content="http://yoursite.com/2018/03/18/Journey-From-Physics-To-DS-I/index.html">
+<meta property="og:site_name" content="Yuan&#39;s Blog">
+<meta property="og:description" content="Data science is no doubt a hot field and attracts professionals from all different domains who are able to organize the astonishing amount of data as well as get insight from data. Though transitionin">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-18T16:43:15.382Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Journey From Physics To Data Science (Part I)">
+<meta name="twitter:description" content="Data science is no doubt a hot field and attracts professionals from all different domains who are able to organize the astonishing amount of data as well as get insight from data. Though transitionin">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/18/Journey-From-Physics-To-DS-I/"/>
+
+
+
+
+
+  <title> A Journey From Physics To Data Science (Part I) | Yuan's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Yuan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/18/Journey-From-Physics-To-DS-I/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Yuan Huang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/author.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Yuan's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Yuan's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                A Journey From Physics To Data Science (Part I)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-18T00:00:00-04:00">
+                2018-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/data-science/" itemprop="url" rel="index">
+                    <span itemprop="name">data science</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/18/Journey-From-Physics-To-DS-I/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/18/Journey-From-Physics-To-DS-I/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Data science is no doubt a hot field and attracts professionals from all different domains who are able to organize the astonishing amount of data as well as get insight from data. Though transitioning into data science sounds very tempting, it is not an easy decision to make when you’ve already invested years of effort into another career path. </p>
+<p>I recently made a transition from a Ph.D. student in computational condensed matter physics to a machine learning engineer at a data-driven personal styling company <a href="https://www.dia.com/welcome" target="_blank" rel="noopener">Dia&amp;Co</a> and I want to share with you my journey and experience. If you are interested in making the transition to data science or still hesitating, hopefully my story can give you a better idea about the process and help you to get more confidence.</p>
+<a id="more"></a>
+<h2 id="Research-Background"><a href="#Research-Background" class="headerlink" title="Research Background"></a>Research Background</h2><p>I was a Ph.D. student in computational condensed matter physics at University of Massachusetts, Amherst. The timeline for my transition was as follows:</p>
+<ul>
+<li>2016-10: Start to learn data science</li>
+<li>2017-01 to 06: Take data science courses from CS department, prepare for Insight interview</li>
+<li>2017-06 to 08: Insight Data Science at NYC</li>
+<li>2017-08 to 10: Interviews for jobs</li>
+<li>2017-10: Accept offer from Dia&amp;Co</li>
+<li>2017-10 to 12: Waiting for OPT, taking stats courses from Rutgers University</li>
+<li>2018-01: Start working</li>
+<li>2018-03: Thesis Defense</li>
+</ul>
+<p>From the time I decide to make the transition to the point I finally landed with a full-time data scientist job, it took me almost exactly one year. </p>
+<p>One thing that made my transition easier is that my day-to-day research involves quite a lot of coding. In the earlier years of my research, I used FORTRAN to write Monte Carlo algorithms since all the legacy codes from our group are in FORTRAN. Around 2015, my colleague and I made a bold and correct decision to learn about Python and C++, and rewrite a quite complicated code (I wrote the first version in FORTRAN but finally we realized that the scale of this code is no longer managable) with proper object-oriented design. Although it took really long to develop the code (ended up being more than 10,000 lines), I definitely learned very valuable lessons about coding through the process. If you are interested about this project, here is the github repo: <a href="https://github.com/kunyuan/Feynman_Simulator" target="_blank" rel="noopener">Feynman Simulator</a>.</p>
+<p>Although research has a lot of fun, I notice myself sometimes enjoy more on the implementation part as it really makes me feel fulfilled when I finally get something running. This is probably not the best trait for a theoretical physicist as it’s more important to have a deep understanding of the theory and come up with innovative ideas. Although I have a solid understanding of the theory in my field, I just don’t think being a theoretical physicist will bring out the best in me. That’s why the idea of becoming a data scientist really hits it off with me.</p>
+<h2 id="Reading-Blogs"><a href="#Reading-Blogs" class="headerlink" title="Reading Blogs"></a>Reading Blogs</h2><p>However, it still takes a lot of courage to finally decide to leave the field you have been working in for 10 years and start as a newbie in a totally different area. Fortunately there are a lot of people out there to help us out. Recently there are more and more successful examples who have made the transition from academia to data science in industry and I really gained a lot of confidence from reading their blog posts, Quora answers, etc. </p>
+<p>Back in the end of 2016, when I was reading a great series of blog posts [Yet Another PhD to Data Science Post] (<a href="http://blog.ethanrosenthal.com/2015/09/23/start-to-insight/" target="_blank" rel="noopener">http://blog.ethanrosenthal.com/2015/09/23/start-to-insight/</a>), I would never imagine that I will be working with the author, <a href="http://blog.ethanrosenthal.com/" target="_blank" rel="noopener">Ethan Rosenthal</a>, at the same company one year later. How small the world is! His blog also greatly inspires me to start my own as I think it’s a fantastic way to learn by teaching as suggested by <a href="https://collegeinfogeek.com/feynman-technique/" target="_blank" rel="noopener">Richard Feynman</a> and also share the ideas with other people. </p>
+<h2 id="Taking-Courses"><a href="#Taking-Courses" class="headerlink" title="Taking Courses"></a>Taking Courses</h2><p>Between October 2016 and January 2017, I was mainly preparing my data science knowledge by taking online courses. </p>
+<p>I took one MOOC on Coursera, which is Andrew Ng’s <a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="noopener">Machine Learning</a>. If you only have the time to take one course in machine learning, I would say this is it. Andrew is a fantastic teacher and really explains all the concepts concretely and clearly. The course covers a large variety of machine learning algorithms (both supervised and unsupervised) in a very accessible level. It’s a great way to get familiar with all the different flavors in the current machine learning field.</p>
+<p>At the same time, I also followed Andrew’s <a href="https://www.youtube.com/watch?v=UzxYlbK2c7E" target="_blank" rel="noopener">CS229 Machine Learning</a> course at Stanford. This is a much math-heavier course and really deep dives into a lot of advanced topics such as learning theory, reinforcement learning and adaptive control. It’s also really interesting to learn about the cool applications of machine learning in something like robotic control, speech recognition, and text processing. (But keep in mind that these online videos have been taken 10 years ago, these are definitely not the state-of-art techniques any more.)</p>
+<p>It’s also quite important to learn Computer Science fundamentals such as algorithms and data structures. The most important reason is that, in the interview process for data scientists, we’ll often encounter coding interviews. It’ll take quite a long time to practice coding exercises, so the earlier you start working on that the better. I followed the <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb" target="_blank" rel="noopener">MIT 6.006 Introduction to Algorithms</a> online course and found it really interesting. I really liked the Dynamic Programming part that Erik taught. I would also highly recommend practicing coding questions on Online Judge platforms such as <a href="https://leetcode.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a> and <a href="https://www.hackerrank.com/domains/algorithms" target="_blank" rel="noopener">HackerRank</a>.</p>
+<p>Starting from January 2017, I was back to school after the winter break and started taking the data science courses from the CS department of UMass. The two courses I took were Machine Learning and Data Visualization.</p>
+<h3 id="Machine-Learning-CS589-at-UMass"><a href="#Machine-Learning-CS589-at-UMass" class="headerlink" title="Machine Learning CS589 at UMass"></a>Machine Learning CS589 at UMass</h3><p>The reason I decided to take another machine learning course is that although I learnt a lot of concepts and theory from Andrew, I still want to work on a end-to-end project that I can practice data collecting, cleaning, preprocessing and modeling techniques. In this course, I worked on several homework projects involving classification, regression and clustering tasks. The homeworks are designed as Kaggle competitions which requires us to try out different models and compete with our peer classmates, which also got me familiar with <a href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</a> platform. And for the final project of the course, we are free to use any open dataset and work on anything we feel interested in. I worked on building a academic paper citation network which I’ll talk in the next section.</p>
+<h3 id="Data-Visualization-CS590V-at-UMass"><a href="#Data-Visualization-CS590V-at-UMass" class="headerlink" title="Data Visualization CS590V at UMass"></a>Data Visualization CS590V at UMass</h3><p>This course is quite an adventure for me. The biggest accomplishment that I’m quite proud of is to learn how to use <a href="https://d3js.org/" target="_blank" rel="noopener">D3.js</a> and HTML/CSS to build interactive visualizations and websites. During the course, I made several data-drive interactive visualizations and hosted them on the department <a href="http://www-edlab.cs.umass.edu/~yuanh" target="_blank" rel="noopener">website</a>. You can see how my skills evolved from the first assignment where the only interactive element is a list of buttons, to the final project which involves fancy <a href="http://www-edlab.cs.umass.edu/~yuanh/590v/project/pages/articles.html" target="_blank" rel="noopener">force-directed network graphs</a> and interactions between different plots!</p>
+<h2 id="Project-Academic-Paper-Citation-Network"><a href="#Project-Academic-Paper-Citation-Network" class="headerlink" title="Project: Academic Paper Citation Network"></a>Project: Academic Paper Citation Network</h2><p>I combined the machine learning and data visualization skills I have acquired and worked on a project that involves data collection, preprocessing, clustering algorithm development, and interactive visualizations. I’m going to write a series of posts about this project in the near future. In a word, I collected the data for all the academic articles published on Physics Review journals and stored the json files in <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a>. Then I implemented two types of clustering algorithms to group the physics articles based on their citation network. At the end, I built the visualizations using <a href="https://d3js.org/" target="_blank" rel="noopener">D3.js</a> to show the papers from different fields and subfields in physics identified from their citation relationship and the top physicists in different fields.</p>
+<h2 id="Insight-Data-Science"><a href="#Insight-Data-Science" class="headerlink" title="Insight Data Science"></a>Insight Data Science</h2><p>As the end of the sememster was around the corner, I applied for <a href="https://www.insightdatascience.com/" target="_blank" rel="noopener">Insight Data Science Program</a> at the end of March. I’ll talk about my experience of applying and participating the Insight program, interviewing with companies in the next post!</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/getting-started/" rel="tag"># getting started</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/18/News-Recommendation-Engine/" rel="next" title="A News Recommendation Engine Driven By Collaborative Reader Behavior">
+                <i class="fa fa-chevron-left"></i> A News Recommendation Engine Driven By Collaborative Reader Behavior
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/author.jpg"
+               alt="Yuan Huang" />
+          <p class="site-author-name" itemprop="name">Yuan Huang</p>
+          <p class="site-description motion-element" itemprop="description">Machine Learning Engineer at Dia&Co | PhD in Condensed Matter Physics</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/huangy22" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/yuan-huang-5059bb93" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:huangy22@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Research-Background"><span class="nav-number">1.</span> <span class="nav-text">Research Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-Blogs"><span class="nav-number">2.</span> <span class="nav-text">Reading Blogs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Taking-Courses"><span class="nav-number">3.</span> <span class="nav-text">Taking Courses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning-CS589-at-UMass"><span class="nav-number">3.1.</span> <span class="nav-text">Machine Learning CS589 at UMass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Visualization-CS590V-at-UMass"><span class="nav-number">3.2.</span> <span class="nav-text">Data Visualization CS590V at UMass</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Academic-Paper-Citation-Network"><span class="nav-number">4.</span> <span class="nav-text">Project: Academic Paper Citation Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insight-Data-Science"><span class="nav-number">5.</span> <span class="nav-text">Insight Data Science</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuan Huang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'huangy22';
+      var disqus_identifier = '2018/03/18/Journey-From-Physics-To-DS-I/';
+
+      var disqus_title = "A Journey From Physics To Data Science (Part I)";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
