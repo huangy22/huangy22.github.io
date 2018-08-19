@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/12/Elasticity-of-Demand/E_vs_P_color.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/12/Elasticity-of-Demand/Conv_vs_P.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/12/Elasticity-of-Demand/Value_vs_P.png">
-<meta property="og:updated_time" content="2018-08-19T02:25:06.318Z">
+<meta property="og:updated_time" content="2018-08-19T03:25:22.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Understanding the price elasticity of demand from an item response model point of view">
 <meta name="twitter:description" content="Price elasticity of demand (PED or Ed) is a measure used in economics to show the responsiveness, or elasticity, of the quantity demanded of a good or service to a change in its price when nothing bu">
@@ -442,7 +442,7 @@
 <script type="math/tex; mode=display">\lim_{c\to\infty} E_n = -P_n \cdot \frac{1}{\sqrt{2\pi} \sigma_C} e^{-(P_n-v_n)^2/2\sigma_C^2} \frac{1}{\Phi(\frac{v_n - P_n}{\sigma_C})}</script><p>the unit in $P_n$ and $\sigma_C$ cancel with each other, leaving the elasticity dimensionless.</p>
 <h2 id="Simulations"><a href="#Simulations" class="headerlink" title="Simulations"></a>Simulations</h2><p>We can verify our derivations by running some simulations. Let us start with a known item-response model</p>
 <script type="math/tex; mode=display">\text{prob}_u =  \text{prob} _{m,n} =\sigma (c(v _n + \delta v _m - P _n))</script><p>with user number $N=50$ and product number $M=1000$. The values of all the model parameters are generated from the following distributions:</p>
-<script type="math/tex; mode=display">v_n \sim \mathcal{N}(0.5, 1)</script><script type="math/tex; mode=display">\delta v_m \sim \mathcal{N}(0, 1)</script><script type="math/tex; mode=display">P_n \sim \mathcal{N}(1, 0.3)</script><script type="math/tex; mode=display">c = 1</script><p>Now we have a generative model on hand and we can use it to generate 10,000 purchase events, each from a Bernoulli trail with probability $\text{prob}_u$.</p>
+<script type="math/tex; mode=display">v_n \sim \mathcal{N}(0.5, 1)</script><script type="math/tex; mode=display">\delta v_m \sim \mathcal{N}(0, 1)</script><script type="math/tex; mode=display">P_n \sim \mathcal{N}(1, 0.3)</script><script type="math/tex; mode=display">c = 2</script><p>Now we have a generative model on hand and we can use it to generate 10,000 purchase events, each from a Bernoulli trail with probability $\text{prob}_u$.</p>
 <p>Then the elasticity is calculated from the equation</p>
 <script type="math/tex; mode=display">E_n = -P_n \cdot \frac{ c \cdot \langle \sigma(f_{m,n}) (1-\sigma(f_{m,n}))\rangle_{m_n}}{\langle \sigma(f_{m,n})\rangle_{m_n}}</script><p>We can see that the relationship between $E_n$ and $P_n$ is indeed roughly a linear curve:</p>
 <p><img src="E_vs_P.png" alt="Elasticity vs Price"><span class="image-caption">Elasticity vs Price</span></p>
