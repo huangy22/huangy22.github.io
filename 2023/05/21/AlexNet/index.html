@@ -11,11 +11,11 @@
   <meta charset="utf-8">
 
   
-  <title>AlexNet.md</title>
+  <title>AI文章精读 - AlexNet 2012</title>
   
   <link rel="canonical" href="http://huangy22.github.io/2023/05/21/AlexNet/">
   
-  <meta name="description" content="">
+  <meta name="description" content="First Pass Use ImageNet dataset Build deep CNN Results: beat 2nd best in ImageNet competition deep network is important did not use any unsupervised p">
   
   
   <meta name="author" content="Yuan Huang">
@@ -24,16 +24,16 @@
   
   <meta property="og:site_name" content="Yuan&#39;s Tech Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="AlexNet.md" />
+  <meta property="og:title" content="AI文章精读 - AlexNet 2012" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="First Pass Use ImageNet dataset Build deep CNN Results: beat 2nd best in ImageNet competition deep network is important did not use any unsupervised p">
   
   <meta property="og:url" content="http://huangy22.github.io/2023/05/21/AlexNet/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AlexNet.md">
+  <meta name="twitter:title" content="AI文章精读 - AlexNet 2012">
   
-  <meta name="twitter:description" content="">
+  <meta name="twitter:description" content="First Pass Use ImageNet dataset Build deep CNN Results: beat 2nd best in ImageNet competition deep network is important did not use any unsupervised p">
   
   
   
@@ -195,9 +195,103 @@
 </div>
 
         <div class="trans">
-            <h2>AlexNet.md</h2>
+            <h2>AI文章精读 - AlexNet 2012</h2>
 
-  
+  <h2 id="First-Pass"><a href="#First-Pass" class="headerlink" title="First Pass"></a>First Pass</h2><ul>
+<li>Use ImageNet dataset</li>
+<li>Build deep CNN</li>
+<li>Results:<ul>
+<li>beat 2nd best in ImageNet competition</li>
+<li>deep network is important</li>
+<li>did not use any unsupervised pre-training</li>
+</ul>
+</li>
+<li>Discussion:<ul>
+<li>temporal data (video)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Second-Pass"><a href="#Second-Pass" class="headerlink" title="Second Pass"></a>Second Pass</h2><h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><ul>
+<li>why important</li>
+<li>object detection problem</li>
+<li>deep CNN<ul>
+<li>use big data to avoid overfit</li>
+<li>regularization</li>
+<li>good model arch design to reduce intrisinc model complexity</li>
+</ul>
+</li>
+<li>GPU (model parallelism)</li>
+<li>deep is important (5 Convo layers, 3 fully connected)</li>
+<li>Results are really good</li>
+</ul>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul>
+<li>DataSet<ul>
+<li>ImageNet</li>
+<li>preprocessing: only corp, no other pre-processing, train on raw RGB pixels</li>
+</ul>
+</li>
+<li>Model Arch<ul>
+<li>overlap pooling</li>
+<li>normalization</li>
+<li>ReLU</li>
+<li>convo layers:<ul>
+<li>11 * 11</li>
+<li>5 * 5</li>
+<li>(3 laysers) 3 * 3</li>
+<li>each layer: more channels, smaller width and height</li>
+<li>compress spacial info and increase channel info</li>
+</ul>
+</li>
+<li>FC layers:<ul>
+<li>extract semantic info</li>
+<li>4096 embeddings</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2 GPU model parallelism (over engineering details, not necessary)</li>
+<li>Overfit<ul>
+<li>increase dataset (randomly corp image to copies)</li>
+<li>RGB PCS transformation</li>
+<li>Data augmentation</li>
+<li>Dropout<ul>
+<li>act as a regularization mechanism</li>
+<li>apply in 2 layers of FC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Training<ul>
+<li>SGD<ul>
+<li>batch size</li>
+<li>momentum</li>
+<li>weight decay (L2 norm)<ul>
+<li>added to the optimization instead of model itself</li>
+</ul>
+</li>
+<li>learning rate (start from 0.01, * 10 everytime when you see there’s a plateau in learning curve)</li>
+</ul>
+</li>
+<li>initialization<ul>
+<li>zero mean, 0.01 sigma^2</li>
+</ul>
+</li>
+<li>90 epoch</li>
+<li>5-6 days of training time</li>
+</ul>
+</li>
+<li>Evaluation<ul>
+<li>train - validation - test</li>
+</ul>
+</li>
+<li>Model Interpretbility<ul>
+<li>convo layers output</li>
+<li>fairness, bias in models</li>
+<li>visualize that embeddings can be used to cluster similar images</li>
+</ul>
+</li>
+</ul>
+
   <p> — May 21, 2023</p>
   
 
