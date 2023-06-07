@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - Yuan Huang</title>
+  <title>AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection</title>
   
-  <link rel="canonical" href="http://huangy22.github.io/archives/2023/05/">
+  <link rel="canonical" href="http://huangy22.github.io/2023/06/07/alexnet-md/">
   
-  <meta name="description" content="">
+  <meta name="description" content="TLDRDeep network is important and powerful for computer vision tasks. This paper trained a convolutional neural network with 5 Convo layers, 3 FC laye">
   
   
   <meta name="author" content="Yuan Huang">
   
   
-  <meta property="og:image" content="http://huangy22.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Yuan&#39;s Tech Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - Yuan Huang" />
+  <meta property="og:title" content="AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="TLDRDeep network is important and powerful for computer vision tasks. This paper trained a convolutional neural network with 5 Convo layers, 3 FC laye">
   
-  <meta property="og:url" content="http://huangy22.github.io/archives/2023/05/" />
+  <meta property="og:url" content="http://huangy22.github.io/2023/06/07/alexnet-md/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - Yuan Huang">
+  <meta name="twitter:title" content="AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="http://huangy22.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="TLDRDeep network is important and powerful for computer vision tasks. This paper trained a convolutional neural network with 5 Convo layers, 3 FC laye">
   
   
-  <meta name="twitter:url" content="http://huangy22.github.io/archives/2023/05/" />
+  
+  
+  <meta name="twitter:url" content="http://huangy22.github.io/2023/06/07/alexnet-md/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -199,48 +195,71 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection</h2>
 
+  <h3 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h3><p>Deep network is important and powerful for computer vision tasks. This paper trained a convolutional neural network with 5 Convo layers, 3 FC layers. Beat 2nd best in ImageNet competition. Did not use any unsupervised pre-training. Use big data to avoid overfit, use regularization. Good model arch design to reduce intrinsic model complexity.</p>
+<h3 id="Model-Arch"><a href="#Model-Arch" class="headerlink" title="Model Arch"></a>Model Arch</h3><ul>
+<li>overlap pooling</li>
+<li>normalization</li>
+<li>ReLU</li>
+<li>convo layers:<ul>
+<li>11 * 11</li>
+<li>5 * 5</li>
+<li>(3 laysers) 3 * 3</li>
+<li>each layer: more channels, smaller width and height</li>
+<li>compress spacial info and increase channel info</li>
+</ul>
+</li>
+<li>FC layers:<ul>
+<li>extract semantic info</li>
+<li>4096 embeddings<br>![[Pasted image 20230524105909.png]]</li>
+</ul>
+</li>
+</ul>
+<h3 id="Model-Training"><a href="#Model-Training" class="headerlink" title="Model Training"></a>Model Training</h3><ul>
+<li>SGD<ul>
+<li>batch size</li>
+<li>momentum</li>
+<li>weight decay (L2 norm)<ul>
+<li>added to the optimization instead of model itself</li>
+</ul>
+</li>
+<li>learning rate (start from 0.01, * 10 everytime when you see there’s a plateau in learning curve)</li>
+</ul>
+</li>
+<li>Initialization<ul>
+<li>zero mean, 0.01 sigma^2</li>
+<li>90 epoch</li>
+<li>5-6 days of training time</li>
+</ul>
+</li>
+</ul>
+<h3 id="Ways-AlexNet-used-to-avoid-overfit"><a href="#Ways-AlexNet-used-to-avoid-overfit" class="headerlink" title="Ways AlexNet used to avoid overfit:"></a>Ways AlexNet used to avoid overfit:</h3><ul>
+<li>increase dataset size (randomly corp image to copies)</li>
+<li>RGB PCS transformation</li>
+<li>Data augmentation</li>
+<li>Dropout<ul>
+<li>act as a regularization mechanism</li>
+<li>apply in 2 layers of FC</li>
+</ul>
+</li>
+</ul>
+<h3 id="Innovations-in-AlexNet"><a href="#Innovations-in-AlexNet" class="headerlink" title="Innovations in AlexNet"></a>Innovations in AlexNet</h3><ul>
+<li>no data preprocessing except for corping the image</li>
+<li>directly use RGB pixels as input</li>
+<li>build deep network without overfitting</li>
+<li>model parallelism</li>
+<li>visualize that embeddings can be used to cluster similar images</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li>title: ImageNet Classification with Deep Convolutional Neural Networks</li>
+<li>authors: Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton</li>
+<li>year: 2012</li>
+<li>page(s): 1106–1114</li>
+</ul>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">May 21, 2023</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2023/05/21/bfs-part2-topological-sort/" class="">
-            
-              广度优先搜索（BFS）- Part 2 - 拓扑排序
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">May 20, 2023</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2023/05/20/bfs-part1/" class="">
-            
-              广度优先搜索（BFS） - Part 1
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p><a class="classtest-link" href="/tags/AI-paper/" rel="tag">AI-paper</a> — Jun 7, 2023</p>
+  
 
 
         </div>
