@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>Posts Related to AI-paper</title>
+  <title>Deep Residual Network 2015</title>
   
-  <link rel="canonical" href="http://huangy22.github.io/tags/AI-paper/">
+  <link rel="canonical" href="http://huangy22.github.io/2023/06/07/resnet/">
   
-  <meta name="description" content="">
+  <meta name="description" content="TLDR deeper network (152 layers, 8 times deeper than VGG), but with lower complexity ImageNet 1st place on classification task CIFAR10 (a simpler data">
   
   
   <meta name="author" content="Yuan Huang">
   
   
-  <meta property="og:image" content="http://huangy22.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Yuan&#39;s Tech Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Posts Related to AI-paper" />
+  <meta property="og:title" content="Deep Residual Network 2015" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="TLDR deeper network (152 layers, 8 times deeper than VGG), but with lower complexity ImageNet 1st place on classification task CIFAR10 (a simpler data">
   
-  <meta property="og:url" content="http://huangy22.github.io/tags/AI-paper/" />
+  <meta property="og:url" content="http://huangy22.github.io/2023/06/07/resnet/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Posts Related to AI-paper">
+  <meta name="twitter:title" content="Deep Residual Network 2015">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="http://huangy22.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="TLDR deeper network (152 layers, 8 times deeper than VGG), but with lower complexity ImageNet 1st place on classification task CIFAR10 (a simpler data">
   
   
-  <meta name="twitter:url" content="http://huangy22.github.io/tags/AI-paper/" />
+  
+  
+  <meta name="twitter:url" content="http://huangy22.github.io/2023/06/07/resnet/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -199,54 +195,53 @@
 </div>
 
         <div class="trans">
-          
+            <h2>Deep Residual Network 2015</h2>
 
+  <h2 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h2><ul>
+<li>deeper network (152 layers, 8 times deeper than VGG), but with lower complexity</li>
+<li>ImageNet 1st place on classification task</li>
+<li>CIFAR10 (a simpler dataset) with deeper network (100 and 1000 layers)</li>
+<li>COCO object detection: won 1st place, 28% improvement</li>
+</ul>
+<h2 id="Main-Learning"><a href="#Main-Learning" class="headerlink" title="Main Learning"></a>Main Learning</h2><p><img src="/2023/06/07/resnet/learning_curve.png" alt="Learning Curve"></p>
+<ul>
+<li>Plain network: going deeper, training and testing error both goes up (it’s model degradation, not overfitting)</li>
+<li>Possible cause: gradient explosion &#x2F; vanishing</li>
+<li>This paper proposed <strong>Residual Net</strong>, which allows model to go deeper without model degradation.</li>
+</ul>
+<h2 id="How-ResNet-works"><a href="#How-ResNet-works" class="headerlink" title="How ResNet works"></a>How ResNet works</h2><p><img src="/2023/06/07/resnet/residual_block.png" alt="Residual Block"></p>
+<ul>
+<li>residual block (Identity Mapping by Shortcuts)</li>
+<li>when residual has different dimension with original x<ul>
+<li>method 1: padding (add zeros), not introducing more params</li>
+<li>method 2: 1 * 1 convolution layer (projection) to adjust the channel number, need more params for the 1 * 1 layer</li>
+</ul>
+</li>
+<li>batch norm right after each convo layer and before activation</li>
+<li>no dropout</li>
+</ul>
+<h2 id="Model-training"><a href="#Model-training" class="headerlink" title="Model training"></a>Model training</h2><ul>
+<li>SGD<ul>
+<li>start with lr 0.1, divide by 10 when error plateaus (tips: don’t jump too quickly, let it continue for a while until you lower the lr)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Why-ResNet-works"><a href="#Why-ResNet-works" class="headerlink" title="Why ResNet works"></a>Why ResNet works</h2><ul>
+<li>fall back to a simpler net (residual idea): no math evidence</li>
+<li>gradient is more stable, makes training easier</li>
+<li>SGD requires gradients to always be large enough (no explosion &#x2F; vanish)</li>
+</ul>
+<h2 id="Why-larger-models-transformer-etc-work"><a href="#Why-larger-models-transformer-etc-work" class="headerlink" title="Why larger models (transformer, etc) work"></a>Why larger models (transformer, etc) work</h2><ul>
+<li>Model intrinsic complexity is lowered by the model arch design even though there are more layers</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>title: Deep Residual Learning for Image Recognition</li>
+<li>authors: Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun</li>
+<li>year: 2015</li>
+</ul>
 
-   <h3>Posts Related to — AI-paper</h3>
-
-
-
-  <article>
-    <div class="row">
-
-      <div class="three columns left lit">
-        <p class="bottom">Jun 7, 2023</p>
-      </div>
-      <div class="nine columns left mb-3">
-        <a href="/2023/06/07/resnet/">
-          
-            Deep Residual Network 2015
-          
-        </a>
-      </div>
-    </div>
-  </article>
-
-
-
-  <article>
-    <div class="row">
-
-      <div class="three columns left lit">
-        <p class="bottom">Jun 7, 2023</p>
-      </div>
-      <div class="nine columns left mb-3">
-        <a href="/2023/06/07/alexnet-md/">
-          
-            AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection
-          
-        </a>
-      </div>
-    </div>
-  </article>
-
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p><a class="classtest-link" href="/tags/AI-paper/" rel="tag">AI-paper</a> — Jun 7, 2023</p>
+  
 
 
         </div>
