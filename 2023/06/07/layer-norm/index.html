@@ -11,38 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>Yuan&#39;s Tech Blog</title>
+  <title>The comparison between batch normalization and layer normalization</title>
   
-  <link rel="canonical" href="http://huangy22.github.io/">
+  <link rel="canonical" href="http://huangy22.github.io/2023/06/07/layer-norm/">
   
-  <meta name="description" content="">
+  <meta name="description" content="Batch Norm Perform a normalization step that fixes the means and variances of each layer’s inputs. For a input of dimension d (feature size dimension)">
   
   
   <meta name="author" content="Yuan Huang">
   
   
-  <meta property="og:image" content="http://huangy22.github.io/images/thumbnail.jpg">
-  
   
   <meta property="og:site_name" content="Yuan&#39;s Tech Blog" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Yuan&#39;s Tech Blog" />
+  <meta property="og:title" content="The comparison between batch normalization and layer normalization" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Batch Norm Perform a normalization step that fixes the means and variances of each layer’s inputs. For a input of dimension d (feature size dimension)">
   
-  <meta property="og:url" content="http://huangy22.github.io/" />
+  <meta property="og:url" content="http://huangy22.github.io/2023/06/07/layer-norm/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yuan&#39;s Tech Blog">
+  <meta name="twitter:title" content="The comparison between batch normalization and layer normalization">
   
-  <meta name="twitter:description" content="">
-  
-  
-  
-  <meta name="twitter:image" content="http://huangy22.github.io/images/thumbnail.jpg">
+  <meta name="twitter:description" content="Batch Norm Perform a normalization step that fixes the means and variances of each layer’s inputs. For a input of dimension d (feature size dimension)">
   
   
-  <meta name="twitter:url" content="http://huangy22.github.io/" />
+  
+  
+  <meta name="twitter:url" content="http://huangy22.github.io/2023/06/07/layer-norm/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -199,90 +195,39 @@
 </div>
 
         <div class="trans">
-          <div class="row">
-  <div class="column">
-    <!-- Main information, edit it on theme/_config.yml -->
-    <h2 class="mb-2"></h2>
-    <p></p>
-    <p></p>
-  </div>
-</div>
+            <h2>The comparison between batch normalization and layer normalization</h2>
 
-<h3>Recent Posts</h3>
+  <h2 id="Batch-Norm"><a href="#Batch-Norm" class="headerlink" title="Batch Norm"></a>Batch Norm</h2><ul>
+<li>Perform a normalization step that fixes the means and variances of each layer’s inputs.</li>
+<li>For a input of dimension d (feature size dimension), for each dimension, perform the normalization across a mini-batch.</li>
+<li>Batch Norm is the common practive in CNNs.</li>
+</ul>
+<h2 id="Layer-Norm"><a href="#Layer-Norm" class="headerlink" title="Layer Norm"></a>Layer Norm</h2><ul>
+<li>For sequence models (RNN &#x2F; transformers), because the sequence length is different across different samples, the mean and variance in mini-batches are not stable</li>
+<li>Layer norm performs the normalization step for a single sample, across the feature dimension in a single layer.</li>
+<li>Layer Norm is the common practice in sequence models such as RNN &#x2F; transformers.</li>
+</ul>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><ul>
+<li>Batch norm normalizes each feature independently across the mini-batch. Layer norm normalizes each of the inputs in the batch independently across all features.</li>
+<li>As batch norm is dependent on batch size, it’s not effective for small batch sizes. Layer norm is independent of the batch size, so it can be applied to batches with smaller sizes as well.</li>
+<li>Batch norm requires different processing at training and inference times. As layer norm can be applied the same way at both training and inference times.</li>
+</ul>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>Layer Normalization<ul>
+<li>authors: Jimmy Lei Ba, Jamie Ryan Kiros, Geoffrey E. Hinton</li>
+<li>year: 2016</li>
+</ul>
+</li>
+<li>Understanding and Improving Layer Normalization<ul>
+<li>authors: Jingjing Xu, Xu Sun, Zhiyuan Zhang, Guangxiang Zhao, Junyang Lin</li>
+<li>year: 2019</li>
+</ul>
+</li>
+</ul>
 
+  <p><a class="classtest-link" href="/tags/AI-paper/" rel="tag">AI-paper</a> — Jun 7, 2023</p>
+  
 
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jun 7, 2023</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2023/06/07/layer-norm/" >
-      
-        The comparison between batch normalization and layer normalization
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jun 7, 2023</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2023/06/07/resnet/" >
-      
-        Deep Residual Network 2015
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">Jun 7, 2023</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2023/06/07/alexnet-md/" >
-      
-        AlexNet 2012 - Deep CNN beating SOTA in imageNet object detection
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">May 21, 2023</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2023/05/21/bfs-part2-topological-sort/" >
-      
-        广度优先搜索（BFS）- Part 2 - 拓扑排序
-      
-    </a>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="three columns left lit">
-    <p class="bottom">May 20, 2023</p>
-  </div>
-  <div class="nine columns left mb-3">
-    <a href="/2023/05/20/bfs-part1/" >
-      
-        广度优先搜索（BFS） - Part 1
-      
-    </a>
-  </div>
-</div>
-
-
-<h4> <a href="/archives">All Posts</a></h4>
 
         </div>
         <div class="row mt-2">
