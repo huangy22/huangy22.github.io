@@ -203,7 +203,8 @@
 <li>Layer norm performs the normalization step for a single sample, across the feature dimension in a single layer.</li>
 <li>Layer Norm is the common practice in sequence models such as RNN &#x2F; transformers.</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><ul>
+<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p><img src="/2023/06/07/layer-norm/batch_layer.png" alt="Comparison"></p>
+<ul>
 <li>Batch norm normalizes each feature independently across the mini-batch. Layer norm normalizes each of the inputs in the batch independently across all features.</li>
 <li>As batch norm is dependent on batch size, it’s not effective for small batch sizes. Layer norm is independent of the batch size, so it can be applied to batches with smaller sizes as well.</li>
 <li>Batch norm requires different processing at training and inference times. As layer norm can be applied the same way at both training and inference times.</li>
